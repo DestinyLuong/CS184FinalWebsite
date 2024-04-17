@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Final Project Milestone</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="997d1062-a254-4019-b4bb-2e4fc3cde844" class="page sans"><header><h1 class="page-title">Final Project Milestone</h1><p class="page-description"></p></header><div class="page-body"><p id="34f47ef8-5d14-4348-be0f-844dec9afba2" class="">Authors: Aishik, Tanush, Joshua, Destiny</p><h1 id="079675ed-c062-4512-9308-002728961e0a" class="">Project Summary</h1><p id="e3e0d11c-1f73-4e74-93ea-a2816d981565" class="">Our project aims to accurately render and physically simulate the look and behavior thin-film materials (in particular bubbles). We also hope to simulate their interactions with one another or with other objects. We’ve split our work into 4 main parts: </p><ol type="1" id="1fd058d2-3b8e-4d4c-98eb-bcf9a7b0ef4c" class="numbered-list" start="1"><li>Bubble mesh creation and physical simulation</li></ol><ol type="1" id="676d4347-24ff-407e-a586-8fb91e070104" class="numbered-list" start="2"><li>Accurate bubble (thin-film) rendering</li></ol><ol type="1" id="e915c174-dd61-4280-a318-615e3a215d02" class="numbered-list" start="3"><li>Merging and mesh changes to support multi-bubble interaction</li></ol><ol type="1" id="4638395a-7104-441d-90d9-547ac70007a3" class="numbered-list" start="4"><li>Animation, by compilation of the completely rendered images at each timestep. </li></ol><h1 id="6242f3b1-ca1c-41f1-9c14-85111a27c773" class="">Progress</h1><p id="da97f67b-5c02-4cf1-b804-95836dee6f50" class="">This week we worked on two of the three main parts. Firstly, we focused on creating a mesh cube representing a misshapen bubble. Taking this newly created “bubble”, we use the points as inputs and begin to perturb the bubble, pushing points in when the bubble is concave, or out when the bubble is convex to create a sphere. To maintain numerical stability within the algorithm, regularly remeshing to remove degenerate geometry is required. These are our results of the process at different timesteps:</p><div id="ab1f7c31-c8f8-4681-aea0-06adea1a3802" class="column-list"><div id="9957e967-f60b-45e2-a762-e6365aab78b7" style="width:50%" class="column"><figure id="0f12dc17-cbd4-47be-b8f6-379a3b76f281" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/cubee.webp"><img style="width:708px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/cubee.webp"/></a></figure></div><div id="5d580146-ea78-4a15-9fb6-d268d36b2bd7" style="width:50%" class="column"><figure id="824fce1e-3f69-42aa-8ef3-e3116f6ca27d" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_mesh.webp"><img style="width:331px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_mesh.webp"/></a></figure></div></div><p id="52616abf-0d36-4a6f-8629-953d88955f26" class="">
+</p><p id="ffb64ab9-e4ce-4e34-a47f-a52e2d75bf77" class="">The second thing we worked on was creating a transparent, film-like texture on the bubble. At the moment, we are rendering our bubble based on a closed-form solution to the Airy summation with angle-dependent Fresnel coefficients and accounting for interference effects. We sample the spectral reflectance distribution at 3 wavelengths, with constant thickness, to determine the RGB values for its BSDF. We plan to render this image with a similar method at every time step, creating an animation where the bubble is reorganizing its mesh. Another potential update we are considering is using a spectral integration along all the wavelengths corresponding to the RGB values to give a more accurate look.</p><p id="d4f9d55e-cc11-48ce-a3ba-dc381f6ba38b" class="">
+</p><p id="f1c3ffb3-8938-4646-b728-8ae691c7499b" class="">Here is our result on the dragon as a proof of concept of the thin-film rendering:</p><figure id="72c577e5-dd6a-43d4-adc4-5cecded4d5f9" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_fin.png"><img style="width:480px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_fin.png"/></a></figure><p id="a344be0c-75fe-4b4b-9ebd-50c32cf3901f" class="">
+</p><h1 id="eec4c312-2175-4bae-82a8-fa5b407f6872" class="">Preliminary Results</h1><div id="e902d944-1105-4c97-b15c-b6306affeba8" class="column-list"><div id="6f87ef9f-dad0-4c65-88e9-bf8d20dd8220" style="width:50%" class="column"><p id="336378c6-b310-4ab5-bfc9-c64092aecbe7" class="">Our bubble render, at the moment, is using a very rudimentary approach to spectral integration and thickness modeling. As such, we are planning to reform our algorithm and believe our final result will be a lot closer to the results in the article <a href="https://www.gamedev.net/tutorials/programming/graphics/thin-film-interference-for-computer-graphics-r2962/"><strong>Thin Film Interference for Computer Graphics</strong></a><strong> </strong>as well as the paper “A Practical Extension to Microfacet Theory for the Modeling of Varying Iridescence“ [Balcour and Barla 2017].</p><p id="59b7b7ed-a34b-4434-9c3f-fba2402854d4" class="">
+</p></div><div id="2638e50d-8ecf-4cc4-86f7-cf71c3339534" style="width:50%" class="column"><figure id="7c97c157-75a8-4744-9764-77d6546e1357" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/example_bubble.png"><img style="width:512px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/example_bubble.png"/></a><figcaption><strong>Image from </strong><a href="https://www.gamedev.net/tutorials/programming/graphics/thin-film-interference-for-computer-graphics-r2962/"><strong>Thin Film Interference for Computer Graphics</strong></a></figcaption></figure></div></div><p id="0e2a6888-e15b-403c-bf04-4611dd3f94d2" class="">
+</p><p id="b61cc2b6-bdac-4b97-9444-fb52d2b7eae4" class="">Our goal for the project is to create a simulation of two bubbles colliding with each other and then merging. We currently have the simulation for a single bubble completed, however, we are still working on how to merge two different bubbles. Our goal is to create something similar to the article Animation of Soap Bubble Dynamics, Cluster Formation, and Collision, which details bubble physics when interacting with other objects including another bubble. The one issue with this article is that it uses a spring-based system rather than a mesh-based one, which is what we currently have modeled, however, we believe we can use some of these ideas in order to achieve a similar product.</p><p id="91ec8450-6adc-4723-991a-2e2f30d7c09a" class=""><strong>Image from </strong>Animation of Soap Bubble Dynamics, Cluster Formation, and Collision<strong>:</strong></p><figure id="bd88dd31-fe6b-44b1-99a6-2aa00b45833b" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/Untitled.png"><img style="width:892px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/Untitled.png"/></a></figure><p id="2896b147-c01c-49b7-86a8-0d328c38f5c2" class="">Another source that has produced similar results is <a href="https://sadashigeishida.bitbucket.io/hgf/hgf.pdf">A Hyperbolic Geometric Flow for Evolving Films and Foams</a>, which uses a mesh-based system and which we based our current model on. They include their results for simulating multiple bubble collisions, but we will most likely simplify these results, in order to model our 2 bubble system.</p><p id="66ad09d4-7fa9-4c60-90a9-aa2c4e3474c2" class=""><strong>Image from </strong><a href="https://sadashigeishida.bitbucket.io/hgf/hgf.pdf">A Hyperbolic Geometric Flow for Evolving Films and Foams</a>:</p><figure id="17a2a1e4-666f-4815-9cbb-ed3d4eb3f805" class="image"><a href="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_new.png"><img style="width:627px" src="Final%20Project%20Milestone%20997d1062a2544019b4bb2e4fc3cde844/bubble_new.png"/></a></figure><h1 id="8340de34-d61c-4eb5-9f17-879c1a930790" class="">Reflections</h1><p id="1892c132-ff8b-4c5b-8cdd-1c09f24dff26" class="">Currently, we have created a general bubble simulation, where a cubed bubble slowly becomes a sphere. In order to create a two-bubble simulation, we would have to change our model to instead start with two spherical bubbles which then float around (via coupling to some external force, e.g. wind / gravity) and merge. This would mean we would have to add more edge cases to the remesher to account for bubble merging. This is a very nontrivial problem, and though there are existing packages which handle it, they are poorly documented and difficult to use.</p><p id="b571047e-aa99-4ac5-9f2a-40fc0c0a97de" class="">For improvements, we want to try and create a faster re-meshing and rendering system as both of these processes took quite a bit of time in our tests. As such, our goal for next week will be working on creating optimizations for these two sections before we dive into creating bubble interactions.</p><p id="fd3c2d3a-4b13-4fcd-a0c4-2202ab55d51a" class="">Furthermore, although our current bubble is transparent and colorful it is not very realistic, we plan to recreate our current BSDF model with one that has higher accuracy when it comes to conversion between its spectral reflectance and an RGB representation.</p><h1 id="7e5967fa-a0c7-4268-a395-1d6e5960dde4" class="">Updated Workplan</h1><p id="b2bbcbbb-f8ba-4f40-8bbb-6d0682d95bf2" class="">3rd Week:</p><ul id="5299e1d6-e9b3-4f0b-8e68-2eb676ff19f4" class="bulleted-list"><li style="list-style-type:disc">Rework conversions between spectral and RGB</li></ul><ul id="eded786b-94df-4af6-ba51-36582e3ed128" class="bulleted-list"><li style="list-style-type:disc">Work on making re-meshing faster</li></ul><ul id="15289b8a-e88b-4161-8ca1-fc95938aa747" class="bulleted-list"><li style="list-style-type:disc">Add a second bubble (potentially look into point-set surfaces as a way to avoid Los Topos?)</li></ul><ul id="60ab12a2-d395-4546-9866-4672ef77c83f" class="bulleted-list"><li style="list-style-type:disc">Possibly add bubble thickness simulation based on [Ishida 2020] or the SPH methods used by Wang et. al.</li></ul><p id="4b049676-be08-4e7c-8ebb-ea9deda82ba8" class="">4th Week:</p><ul id="4b02c2bf-bb65-44c4-87c2-e6ae2d38271e" class="bulleted-list"><li style="list-style-type:disc">Work on bubble interaction with second bubble</li></ul><ul id="e1ae19a0-b25b-4f4c-8bb5-706878bf32af" class="bulleted-list"><li style="list-style-type:disc">Have a pipeline from each of the mesh images at every simulation step to its corresponding rendering through the path-tracer code.<ul id="887dbd1d-bdcc-40f8-af3c-b0cae060dbed" class="bulleted-list"><li style="list-style-type:circle">Compiling all of those images at a fast frame rate should give a convincing and nice bubble simulation graphic video.</li></ul></li></ul><ul id="f94e4b95-b55c-458e-84f6-f062c9d04bf9" class="bulleted-list"><li style="list-style-type:disc">Complete final slides + report + video</li></ul><h1 id="c611d956-4fc3-4d4b-a5f9-b7c4581339c8" class="">Milestone Video</h1><figure id="d598dbbf-749a-4fc1-81e4-022b0eb5a0c6"><div class="source"><a href="https://youtu.be/urRxSCtapxo?si=cuWqONzJ_l5CSm7D">https://youtu.be/urRxSCtapxo?si=cuWqONzJ_l5CSm7D</a></div></figure><h1 id="70749490-bf7a-4c91-bf22-dcbff417d493" class="">Milestone Slides</h1><figure id="d3695644-a044-470a-bfeb-1cc8ec3419dd"><div class="source"><a href="https://docs.google.com/presentation/d/1VYxG8v8P5WddWSEsXrQ5G_-IsCPKech-tWzwYMJJVcU/edit#slide=id.p">https://docs.google.com/presentation/d/1VYxG8v8P5WddWSEsXrQ5G_-IsCPKech-tWzwYMJJVcU/edit#slide=id.p</a></div></figure><h1 id="1069a875-d7c1-4ff8-b9ed-ea2956ec1d2f" class="">Milestone Folder</h1><figure id="39e5f333-55b7-4656-a4dc-531faf39cb60"><div class="source"><a href="https://drive.google.com/drive/folders/1uErYYdsmDdRjORi0SMAUh9Ka0UTWT9bx">https://drive.google.com/drive/folders/1uErYYdsmDdRjORi0SMAUh9Ka0UTWT9bx</a></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
